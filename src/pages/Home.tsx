@@ -2,12 +2,12 @@ import { TaskProvider } from '../contexts/TaskContext';
 import { TaskList } from '../components/TaskList';
 
 export default function Home() {
-  return (
-    <div>
-      <h1 className="text-3xl font-bold mb-4">Task Manager</h1>
-      <TaskProvider>
-        <TaskList />
-      </TaskProvider>
-    </div>
-  );
+    return (
+        <div>
+        <h1 className="text-3xl font-bold mb-4">Task Manager</h1>
+        <TaskProvider>
+            <TaskList />
+        </TaskProvider>
+        </div>
+    );
 }

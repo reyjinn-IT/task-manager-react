@@ -4,6 +4,6 @@ import { Route as PostsRoute } from './posts';
 import { Route as PostIdRoute } from './posts/$postId';
 
 export const routeTree = RootRoute.addChildren([
-  HomeRoute,
-  PostsRoute.addChildren([PostIdRoute]),
+    HomeRoute,
+    PostsRoute.addChildren([PostIdRoute]),
 ]);

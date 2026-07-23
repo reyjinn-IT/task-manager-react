@@ -2,9 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { RouterProvider, createRouter } from '@tanstack/react-router';
 import { routeTree } from './routes';
-import './index.css'
+import './index.css'; // <-- INI PENTING!
 
 const router = createRouter({ routeTree });
+
 declare module '@tanstack/react-router' {
   interface Register {
     router: typeof router;
