@@ -1,16 +1,33 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { TaskProvider } from './contexts/TaskContext';
-import { TaskList } from './components/TaskList';
+import Layout from './components/Layout';
+import Home from './pages/Home';
+import About from './pages/About';
+import Dashboard from './pages/Dashboard';
+import Login from './pages/Login';
+import { PrivateRoute } from './components/PrivateRoute';
 
 function App() {
-  console.log("🔥 App sedang berjalan!");
-  
   return (
-    <TaskProvider>
-      <div className="p-4 max-w-xl mx-auto">
-        <h1 className="text-2xl font-bold">Task Manager</h1>
-        <TaskList />
-      </div>
-    </TaskProvider>
+    <BrowserRouter>
+      <TaskProvider>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="about" element={<About />} />
+            <Route path="login" element={<Login />} />
+            <Route
+              path="dashboard"
+              element={
+                <PrivateRoute>
+                  <Dashboard />
+                </PrivateRoute>
+              }
+            />
+          </Route>
+        </Routes>
+      </TaskProvider>
+    </BrowserRouter>
   );
 }
 
