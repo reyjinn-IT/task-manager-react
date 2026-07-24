@@ -2,7 +2,7 @@ import { createRoute } from '@tanstack/react-router';
 import { Route as RootRoute } from './__root';
 import { fetchPosts } from '../api/post';
 import { Link } from '@tanstack/react-router';
-import type { Post } from '../api/post';
+
 
 export const Route = createRoute({
     getParentRoute: () => RootRoute,
