@@ -1,16 +1,10 @@
-import { createRoute, redirect } from '@tanstack/react-router';
+import { createRoute } from '@tanstack/react-router';
 import { Route as RootRoute } from './__root';
 import { useTaskStore } from '../stores/useTaskStore';
 
 export const Route = createRoute({
     getParentRoute: () => RootRoute,
     path: '/dashboard',
-    beforeLoad: () => {
-        const isAuthenticated = !!localStorage.getItem('user');
-        if (!isAuthenticated) {
-        throw redirect({ to: '/login' as any });
-        }
-    },
     component: function Dashboard() {
         const tasks = useTaskStore((state) => state.tasks);
 

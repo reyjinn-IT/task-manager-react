@@ -19,9 +19,6 @@ export const Route = createRoute({
             <TaskStats />
             <TaskList />
             </div>
-            <div className="text-center text-sm text-gray-400 mt-6">
-            Made by using React + Zustand
-            </div>
         </div>
         );
     },
